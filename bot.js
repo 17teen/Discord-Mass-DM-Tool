@@ -20,10 +20,12 @@ for (const file of commandFiles) {
 const config = require('./config.json');
 client.config = config;
 
+// https://github.com/17teen
+
 client.on('ready', () => {
     console.log(`${client.user.username} is online`)
 
-    client.user.setActivity({type:"STREAMING", url: "https://www.twitch.tv/ayoohennio", name: "blade <$"})
+    client.user.setActivity({type:"STREAMING", url: "https://www.twitch.tv/ayoohennio", name: "7teen made this <$"})
 
 });
 
