@@ -34,6 +34,10 @@
 
 ![settings](https://media.discordapp.net/attachments/782211920416735252/789815016835645440/unknown.png)
 
+# Result: 
+
+![result](https://media.discordapp.net/attachments/782211920416735252/789869396461355018/a6d6182581d683640541e73c5a39dc28.gif)
+
 ## Start: 
 
 1. Run the 'run' file.
