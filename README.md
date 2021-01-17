@@ -1,7 +1,7 @@
-# 7teen Mass DM Tool V2
+# 7teen Mass DM Tool V3
 
 
-| 7teen Mass DM Tool V2 | 
+| 7teen Mass DM Tool V3 | 
 | ------------- | 
 | ![result](https://media.discordapp.net/attachments/782211920416735252/789831752540880906/9a3362d5eb93661261d0c62ccac678a8.gif) | 
 
@@ -10,7 +10,7 @@
 # Requirements Before Set-up:
 
 1. [Node.JS](https://nodejs.org/en/) installed.
-2. Code Editor: VSC(recommended), Pycharm, Sublime, Atom etc.
+2. Code Editor: VSC(recommended), Sublime, Atom etc.
 
 # Set-up: Bot
 
@@ -27,16 +27,13 @@
 1. Run the `Launch` file and wait for all the packages to be installed.
 1. Right click on the 'settings.json' file.
 2. Open the file either on Notepad or a code editor i.e VSC (Visual Studio Code).
+3. Make sure to add your ID for the commands to work.
 3. Fill in ALL the gaps.
 4. Save.
 
 ### Example
 
-![settings](https://media.discordapp.net/attachments/782211920416735252/789815016835645440/unknown.png)
-
-# Result: 
-
-![result](https://media.discordapp.net/attachments/782211920416735252/789869396461355018/a6d6182581d683640541e73c5a39dc28.gif)
+![settings](https://media.discordapp.net/attachments/782211920416735252/800313374185095178/unknown.png)
 
 ## Start: 
 
