@@ -1,5 +1,5 @@
 @echo off
-title 7teen Mass DM Tool v2
+title 7teen Mass DM Tool v3
 :top
 cls
 call loading.bat
