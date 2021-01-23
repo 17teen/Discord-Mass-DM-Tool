@@ -46,7 +46,7 @@ client.on("message", message => {
   if (message.mentions.has(client.user.id)) {
     const mention = new Discord.MessageEmbed()
       .setAuthor(`${client.user.username}#${client.user.discriminator}`, client.user.avatarURL({ dynamic: true }))
-      .setTitle(`Mass DM Tool V2 | Need Help?`)
+      .setTitle(`Mass DM Tool V3 | Need Help?`)
       .setDescription(`Seems you're in need of help.
     \n **Prefix:** ${prefix}
     \n **Help:** ${prefix}help 
@@ -69,7 +69,7 @@ client.on("message", message => {
     else {
       const help = new Discord.MessageEmbed()
         .setAuthor(`${client.user.username}#${client.user.discriminator}`, client.user.avatarURL({ dynamic: true }))
-        .setTitle(`Mass DM Tool V2 | Need Help?`)
+        .setTitle(`Mass DM Tool V3 | Need Help?`)
         .setDescription(`Seems you're in need of help.
   \n **Prefix:** ${prefix}
   \n **Mass DM:** ${prefix}dm [text] 
@@ -92,7 +92,7 @@ client.on("message", message => {
     else {
       const about = new Discord.MessageEmbed()
         .setAuthor(`${client.user.username}#${client.user.discriminator}`, client.user.avatarURL({ dynamic: true }))
-        .setTitle(`Mass DM Tool V2 | About`)
+        .setTitle(`Mass DM Tool V3 | About`)
         .setDescription(`*This is a Vissage production.*
             \n**Founder** 
             \n \`Discord:\` [7teen](https://discord.com/users/709827684888215582) \n \`Github:\` [7teen](https://github.com/17teen) \n \`Telegram:\` [7teen](https://t.me/clairvoyant7teen) \n \n **Oragnization:** \n \`Vissage:\` [Vissage Inc.](https://github.com/Vissage) 
