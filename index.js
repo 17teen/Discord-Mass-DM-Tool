@@ -1,5 +1,5 @@
 // https://github.com/17teen
-// Discord: 7teen#1464
+// Discord: 7teen#3868
 
 const Discord = require('discord.js');
 const client = new Discord.Client({ ws: { intents: new Discord.Intents(Discord.Intents.ALL) } });
@@ -27,7 +27,7 @@ console.log(cyan(MassDM));
 
 
 client.on("ready", () => {
-  console.log(greenBright(`                                             By thug angel#3868`));
+  console.log(greenBright(`                                             By 7teen#3868`));
   console.log(``);
   console.log(``);
   console.log(greenBright(`                                          Logged in as: ${client.user.username}#${client.user.discriminator}`));
