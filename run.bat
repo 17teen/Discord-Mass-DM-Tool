@@ -1,8 +1,6 @@
 @echo off
-title 7teen Mass DM Tool v3
+title Mass DM: 7teen 
 :top
-cls
-call loading.bat
 cls
 node .
 pause
