@@ -2,14 +2,12 @@
 title Launching Modules v.1.1.0
 :top
 cls
-node launch.js
-pause
+echo This will start to attempt to install a package manager and modules on your system.
+echo Tip: Keep pressing Enter untill you see: "Is this OK? (yes)" and press Enter again
     call npm init
+    echo Now you wait for the rest of the modules to be installed.
     call npm install discord.js
     call npm install chalk
 pause
 cls
-node done.js
-pause
 exit
-goto :top
