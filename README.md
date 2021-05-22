@@ -1,70 +1,42 @@
-# 7teen Mass DM Tool V3
+# Mass DM
 
+![image](https://user-images.githubusercontent.com/71920969/119238368-fbfb1c00-bb39-11eb-9380-a9962604ec8a.png)
 
-| 7teen Mass DM Tool V3 | 
-| ------------- | 
-| ![result](https://media.discordapp.net/attachments/782211920416735252/789831752540880906/9a3362d5eb93661261d0c62ccac678a8.gif) | 
+**Description:** Tool which messages everyone in a Discord server (If user has DM's off they cannot be messaged).
 
+**Features:**
 
+- 2 New DM Modes (`Normal` & `Timeout`).
+- Bypassing/Avoiding spam flags from Discord.
 
-# Requirements Before Set-up:
+- Normal Mode:
+  - DM Speed: Attempts to dm in under 1 second between each user.
+- Timeout Mode:
+  - DM Speed: 3 - 9 second timeouts between each DM.
+  - Chance of bot flagging: Very Low.
 
-1. [Node.JS](https://nodejs.org/en/) installed.
-2. Code Editor: VSC(recommended), Sublime, Atom etc.
+Must have [Node.JS LTS Version](https://nodejs.org/en/) installed & and some sort of text editor.
+Put your bot token in the `settings.json`.
 
-# Set-up: Bot
+**Example:**
+```
+{
+    "token": "NzYzNjM5ODE2Mzg1JKaykuk.X36o_w.LkrJSMHlUIpj_p93Xo9agfEg50k"
+}
+```
 
-1. Go to your [Discord Developers Applications](https://discord.com/developers/applications) and create a new bot | You can use an existing one.
-2. Go to the "Bot" section and scroll down till you see "Privileged Gateway Intents".
-3. Select both **Presence Intent** and **Server Members Intent**
+**Setup:**
+1. Run `Launch.bat` file to install required modules.
+2. Run `run.bat` file to start the programme.
 
-### Example
+**Note:** All your bots intents must be toggled on. How to do so? `Dev Portal > Bot > Privileged Gateway Intents` **(toggle both intents on)**
 
-![intents](https://media.discordapp.net/attachments/782211920416735252/789810856460419092/unknown.png?width=1409&height=400)
-
-# Set-up: Script
-
-1. Run the `Launch` file and wait for all the packages to be installed.
-1. Right click on the 'settings.json' file.
-2. Open the file either on Notepad or a code editor i.e VSC (Visual Studio Code).
-3. Make sure to add your ID for the commands to work.
-3. Fill in ALL the gaps.
-4. Save.
-
-### Example
-
-![settings](https://media.discordapp.net/attachments/782211920416735252/800313374185095178/unknown.png)
-
-## Start: 
-
-1. Run the 'run' file.
-
-## Does This Work On Repl.it?
-
-Yes. [Click Here](https://replit.com/@17teen/Discord-Mass-DM-Tool?v=1)
-
-
-# How it works.
-* Discord has added a feature named ["Gateway Intents"](https://discord.com/developers/docs/topics/gateway), which are a form of real-time communication over secure WebSockets. This is to control abuse of data and to lower computational overload.
-
-# WARNING !
-* Discord will only allow you to MASS DM once and then your bot will be flagged for spam and you will recieve the following error: `UnhandledPromiseRejectionWarning: DiscordAPIError: Your bot has been flagged by our anti-spam system for abusive behavior. Please reach out to our team by going to https://dis.gd/report and selecting "Appeal an Action Trust and Safety took on my bot" as the Report Type.`
-* Your discord bot will be quarantined stopping you from Mass Messaging users in a guild.
-* Previous testing suggests any guild over 100 members, results in your bot quarantined.
-
-### Example
-
-![bot_qurantined](https://media.discordapp.net/attachments/782211920416735252/789813065209217024/unknown.png?width=1409&height=281)
-
-## How to Resolve:
-* Make a new Discord bot.
-* Go call for an [appeal](https://dis.gd/report) and selecting "Appeal an Action Trust and Safety took on my bot" as the Report Type for your bot so the bot is removed from being flagged. (Must Think of a good reason as to why you want bot to be unflagged)
-
-*First option recommended*
-
-# Disclaimer
-
+## Disclaimer: 
 This is tool was made for educational purposes and proof of concepts. I'm not accountable for any unlawful, unprecedented action and any violation of ToS administered by a third party.
+
+If normal mode was used you are subject to your bot being flagged by discord. How to solve this issue:
+   - Go call for an [appeal](https://support.discord.com/hc/en-us/requests/new?ticket_form_id=360000029731) and selecting "Appeal an Action Trust and Safety took on my bot" as the Report Type for your bot so the bot is removed from being flagged.
+   - Just make a new bot.
 
 ## Contact Me
 
