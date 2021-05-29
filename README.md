@@ -31,6 +31,8 @@ Put your bot token in the `settings.json`.
 
 **Note:** All your bots intents must be toggled on. How to do so? `Dev Portal > Bot > Privileged Gateway Intents` **(toggle both intents on)**
 
+**Permission Required:** `Administrator`.
+
 ## Disclaimer: 
 This is tool was made for educational purposes and proof of concepts. I'm not accountable for any unlawful, unprecedented action and any violation of ToS administered by a third party.
 
