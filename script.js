@@ -102,7 +102,7 @@ async function ScrapeUsers(guildID) {
         const content = JSON.stringify(Data, null, 2)
         fs.writeFileSync(file_path, content, (err) => {
             if (err) return console.log(red("Writing File Error: " + err))
-            resolve(console.log(greenBright("Successfully made " + file_path)))
+            console.log(greenBright("Successfully made " + file_path))
         })
     }).catch((err) => {
         console.log(red("Fetching Guild Error: " + err))
