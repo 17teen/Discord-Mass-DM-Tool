@@ -20,7 +20,7 @@ const token = settings.token;
 // When client is on
 client.on("ready", () => {
     console.log(greenBright(client.user.tag + "is online.\n"));
-    client.user.setActivity({name: "7teen !", type: "STREAMING", url: "https://www.twitch.tv/yourragegaming"})
+    client.user.setActivity({ name: "7teen !", type: "STREAMING", url: "https://www.twitch.tv/yourragegaming" })
     Main();
 });
 
@@ -76,27 +76,27 @@ function Main() {
  * @param {string} guildID ID of gthe guild which to scrape the users from
  */
 async function ScrapeUsers(guildID) {
-        // Fetch Guild
-        client.guilds.fetch(guildID).then((guild) => {
-            const file_path = './scraped.json';
-            const MemberIDs = guild.members.cache.map((users) => users.id)
-            const Data = {
-                IDs: MemberIDs
-            }
-            const content = JSON.stringify(Data, null, 2)
-            fs.writeFileSync(file_path, content, (err) => {
-                if (err) return console.log(red("Writing File Error: " + err))
-                resolve(console.log(greenBright("Successfully made " + file_path)))
-            })
-        }).catch((err) => {
-            console.log(red("Fetching Guild Error: " + err))
-            setTimeout(() => {
-                console.log(yellow("Warning: Restarting."));
-            }, 1000);
-            setTimeout(() => {
-                process.exit(1);
-            }, 2000);
+    // Fetch Guild
+    client.guilds.fetch(guildID).then((guild) => {
+        const file_path = './scraped.json';
+        const MemberIDs = guild.members.cache.map((users) => users.id)
+        const Data = {
+            IDs: MemberIDs
+        }
+        const content = JSON.stringify(Data, null, 2)
+        fs.writeFileSync(file_path, content, (err) => {
+            if (err) return console.log(red("Writing File Error: " + err))
+            resolve(console.log(greenBright("Successfully made " + file_path)))
         })
+    }).catch((err) => {
+        console.log(red("Fetching Guild Error: " + err))
+        setTimeout(() => {
+            console.log(yellow("Warning: Restarting."));
+        }, 1000);
+        setTimeout(() => {
+            process.exit(1);
+        }, 2000);
+    })
 }
 
 /**
@@ -137,10 +137,8 @@ function MassDMNormal(users, msg) {
     return new Promise((resolve, reject) => {
         const scraped = require("./scraped.json");
         users = scraped.IDs;
-        if (typeof timeout != "number") {
-            reject(red("Timeout Error: Wrong data type used."))
-        } else if (typeof msg != "string") {
-            reject(red("Message Args Error: Must use of 'string' data type0"))
+        if (typeof msg != "string") {
+            reject(red("Message Args Error: Must use of 'string' data type"))
         } else {
             for (let i = 0; i <= users.length; i++) {
                 client.users.fetch(users[i]).then((u) => {
