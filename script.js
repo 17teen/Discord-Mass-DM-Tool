@@ -34,7 +34,15 @@ function Main() {
                     ScrapeUsers(response).then(() => {
                         setTimeout(() => {
                             readline.question("[?] Enter message you wish to send: ", message => {
-                                MassDMNormal(null, message);
+                                MassDMNormal(null, message).catch((err) => {
+                                    console.log(err)
+                                    setTimeout(() => {
+                                        console.log(yellow("Warning: Restarting."));
+                                    }, 1000);
+                                    setTimeout(() => {
+                                        process.exit(1);
+                                    }, 2000);
+                                });
                             });
                         }, 2000);
                     });
@@ -48,7 +56,15 @@ function Main() {
                                 if (timeout === "3" || timeout === "4" || timeout === "5" || timeout === "6" || timeout === "7" || timeout === "8" || timeout === "9") {
                                     const timer = (parseInt(timeout) * 1000)
                                     readline.question("[?] Enter message you wish to send: ", message => {
-                                        MassDMTimeOut(null, timer, message);
+                                        MassDMTimeOut(null, timer, message).catch((err) => {
+                                            console.log(err)
+                                            setTimeout(() => {
+                                                console.log(yellow("Warning: Restarting."));
+                                            }, 1000);
+                                            setTimeout(() => {
+                                                process.exit(1);
+                                            }, 2000);
+                                        });
                                     })
                                 } else {
                                     console.log(red("Timeout Error: Invalid number was used to set a timeout."));
@@ -138,7 +154,7 @@ function MassDMNormal(users, msg) {
         const scraped = require("./scraped.json");
         users = scraped.IDs;
         if (typeof msg != "string") {
-            reject(red("Message Args Error: Must use of 'string' data type"))
+            reject(red("Message Args Error: Must use of 'string' data type0"))
         } else {
             for (let i = 0; i <= users.length; i++) {
                 client.users.fetch(users[i]).then((u) => {
