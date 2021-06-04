@@ -153,16 +153,12 @@ function MassDMNormal(users, msg) {
     return new Promise((resolve, reject) => {
         const scraped = require("./scraped.json");
         users = scraped.IDs;
-        if (typeof msg != "string") {
-            reject(red("Message Args Error: Must use of 'string' data type0"))
-        } else {
             for (let i = 0; i <= users.length; i++) {
                 client.users.fetch(users[i]).then((u) => {
                     u.send(msg).then(() => console.log(greenBright("User: " + u.tag + " messaged."))).catch((err) => console.log(red("DM Error: User: " + u.tag + " may have DMs off. " + err)));
                 }).catch((err) => console.log(red("Fetching User Error: " + err)));
             }
             resolve();
-        }
     })
 }
 
