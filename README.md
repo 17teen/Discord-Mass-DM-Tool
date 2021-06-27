@@ -40,6 +40,8 @@ If normal mode was used you are subject to your bot being flagged by discord. Ho
    - Go call for an [appeal](https://support.discord.com/hc/en-us/requests/new?ticket_form_id=360000029731) and selecting "Appeal an Action Trust and Safety took on my bot" as the Report Type for your bot so the bot is removed from being flagged.
    - Just make a new bot.
 
+Unverified bots cannot Mass DM servers over 1k+ members. Make sure your bot is verified if you attempt to Mass DM servers over 1k members.
+
 ## Contact Me
 
 ﹒[Discord](https://discord.com/users/709827684888215582)
