@@ -1,0 +1,163 @@
+{
+  "name": "discord.js",
+  "version": "12.5.3",
+  "description": "A powerful library for interacting with the Discord API",
+  "main": "./src/index",
+  "types": "./typings/index.d.ts",
+  "exports": {
+    ".": [
+      {
+        "require": "./src/index.js",
+        "import": "./esm/discord.mjs"
+      },
+      "./src/index.js"
+    ],
+    "./esm": "./esm/discord.mjs"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run docs:test && npm run lint:typings",
+    "test:typescript": "tsc",
+    "docs": "docgen --source src --custom docs/index.yml --output docs/docs.json",
+    "docs:test": "docgen --source src --custom docs/index.yml",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "lint:typings": "tslint typings/index.d.ts",
+    "prettier": "prettier --write src/**/*.js typings/**/*.ts",
+    "build:browser": "webpack",
+    "prepublishOnly": "npm run test && cross-env NODE_ENV=production npm run build:browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discordjs/discord.js.git"
+  },
+  "keywords": [
+    "discord",
+    "api",
+    "bot",
+    "client",
+    "node",
+    "discordapp"
+  ],
+  "author": "Amish Shah <amishshah.2k@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/discordjs/discord.js/issues"
+  },
+  "homepage": "https://github.com/discordjs/discord.js#readme",
+  "runkitExampleFilename": "./docs/examples/ping.js",
+  "unpkg": "./webpack/discord.min.js",
+  "dependencies": {
+    "@discordjs/collection": "^0.1.6",
+    "@discordjs/form-data": "^3.0.1",
+    "abort-controller": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "prism-media": "^1.2.9",
+    "setimmediate": "^1.0.5",
+    "tweetnacl": "^1.0.3",
+    "ws": "^7.4.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-angular": "^12.0.1",
+    "@types/node": "^12.12.6",
+    "@types/ws": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "discord.js-docgen": "git+https://github.com/discordjs/docgen.git",
+    "dtslint": "^4.0.8",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "json-filter-loader": "^1.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "terser-webpack-plugin": "^4.2.3",
+    "tslint": "^6.1.3",
+    "typescript": "^4.2.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browser": {
+    "@discordjs/opus": false,
+    "https": false,
+    "ws": false,
+    "erlpack": false,
+    "prism-media": false,
+    "opusscript": false,
+    "node-opus": false,
+    "tweetnacl": false,
+    "sodium": false,
+    "worker_threads": false,
+    "zlib-sync": false,
+    "src/sharding/Shard.js": false,
+    "src/sharding/ShardClientUtil.js": false,
+    "src/sharding/ShardingManager.js": false,
+    "src/client/voice/ClientVoiceManager.js": false,
+    "src/client/voice/VoiceBroadcast.js": false,
+    "src/client/voice/VoiceConnection.js": false,
+    "src/client/voice/dispatcher/BroadcastDispatcher.js": false,
+    "src/client/voice/dispatcher/StreamDispatcher.js": false,
+    "src/client/voice/networking/VoiceUDPClient.js": false,
+    "src/client/voice/networking/VoiceWebSocket.js": false,
+    "src/client/voice/player/AudioPlayer.js": false,
+    "src/client/voice/player/BasePlayer.js": false,
+    "src/client/voice/player/BroadcastAudioPlayer.js": false,
+    "src/client/voice/receiver/PacketHandler.js": false,
+    "src/client/voice/receiver/Receiver.js": false,
+    "src/client/voice/util/PlayInterface.js": false,
+    "src/client/voice/util/Secretbox.js": false,
+    "src/client/voice/util/Silence.js": false,
+    "src/client/voice/util/VolumeInterface.js": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "prettier --write"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ],
+    "rules": {
+      "scope-case": [
+        2,
+        "always",
+        "pascal-case"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "chore",
+          "build",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "all",
+    "endOfLine": "lf",
+    "arrowParens": "avoid"
+  }
+}

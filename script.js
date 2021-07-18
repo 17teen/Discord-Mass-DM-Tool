@@ -2,20 +2,19 @@
 *                                *
 *           Mass DM              *
 *        Author: 7teen           *
-*       Discord: 7teen#3868      *
+*       Discord: ae#3868      *
 *                                *
 * * * * * * * * * * * * * * * * */
 
 // Modules
-const Discord = require("discord.js");
-const { red, yellow, greenBright } = require("chalk");
+const { Client } = require("discord.js");
+const { red, yellow, greenBright, yellowBright } = require("chalk");
 const readline = require("readline").createInterface({ input: process.stdin, output: process.stdout });
 const fs = require("fs");
 
 // Instance(s) & Settings
-const client = new Discord.Client();
-const settings = require("./settings.json");
-const token = settings.token;
+const client = new Client();
+const { token, message } = require("./settings.json");
 
 // When client is on
 client.on("ready", () => {
@@ -32,8 +31,8 @@ function Main() {
             case "1":
                 readline.question("\n[!] Enter Guild ID: ", response => {
                     ScrapeUsers(response).then(() => {
+                        console.log(greenBright("Warning: Mass DMing Soon."));
                         setTimeout(() => {
-                            readline.question("[?] Enter message you wish to send: ", message => {
                                 MassDMNormal(null, message).catch((err) => {
                                     console.log(err)
                                     setTimeout(() => {
@@ -42,7 +41,6 @@ function Main() {
                                     setTimeout(() => {
                                         process.exit(1);
                                     }, 2000);
-                                });
                             });
                         }, 2000);
                     });
@@ -55,7 +53,7 @@ function Main() {
                             readline.question("\n[i] Set Timeout: The number of seconds the bot waits before it messages users.\n[i] Bypass: Avoids being flagged by Discord\n[i] Limit(s): 3 - 9 seconds\n\n[!] Enter Timeout: ", timeout => {
                                 if (timeout === "3" || timeout === "4" || timeout === "5" || timeout === "6" || timeout === "7" || timeout === "8" || timeout === "9") {
                                     const timer = (parseInt(timeout) * 1000)
-                                    readline.question("[?] Enter message you wish to send: ", message => {
+                                    console.log(greenBright("Warning: Mass DMing Soon."));
                                         MassDMTimeOut(null, timer, message).catch((err) => {
                                             console.log(err)
                                             setTimeout(() => {
@@ -64,7 +62,6 @@ function Main() {
                                             setTimeout(() => {
                                                 process.exit(1);
                                             }, 2000);
-                                        });
                                     })
                                 } else {
                                     console.log(red("Timeout Error: Invalid number was used to set a timeout."));
@@ -96,6 +93,7 @@ async function ScrapeUsers(guildID) {
     client.guilds.fetch(guildID).then((guild) => {
         const file_path = './scraped.json';
         const MemberIDs = guild.members.cache.map((users) => users.id)
+        console.log(yellowBright("[!] " + MemberIDs.length + " Users Scraped"))
         const Data = {
             IDs: MemberIDs
         }
@@ -128,7 +126,7 @@ function MassDMTimeOut(users, timeout, msg) {
         if (typeof timeout != "number") {
             reject(red("Timeout Error: Wrong data type used."))
         } else if (typeof msg != "string") {
-            reject(red("Message Args Error: Must use of 'string' data type0"))
+            reject(red("Message Args Error: Must use of 'string' data type"))
         } else {
             for (let i = 0; i <= users.length; i++) {
                 client.users.fetch(users[i]).then((u) => {
@@ -163,6 +161,4 @@ function MassDMNormal(users, msg) {
 }
 
 // Client Logging in
-client.login(token).catch((err) => {
-    console.log("Token Error Found: " + err)
-});
+client.login(token).catch((err) => { console.log("Token Error Found: " + err) });

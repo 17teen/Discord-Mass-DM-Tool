@@ -18,12 +18,24 @@
 Must have [Node.JS LTS Version](https://nodejs.org/en/) installed & and some sort of text editor.
 Put your bot token in the `settings.json`.
 
-**Example:**
+**Example: Token**
 ```
 {
     "token": "NzYzNjM5ODE2Mzg1JKaykuk.X36o_w.LkrJSMHlUIpj_p93Xo9agfEg50k"
 }
 ```
+
+**Example: Message**
+```
+{
+    "token": "NzYzNjM5ODE2Mzg1JKaykuk.X36o_w.LkrJSMHlUIpj_p93Xo9agfEg50k",
+    "message": "Test\nTest\n\ntest"
+}
+```
+
+**Result:**
+
+![Result](https://media.discordapp.net/attachments/790498161533517835/864837793510064138/unknown.png)
 
 **Setup:**
 1. Run `Launch.bat` file to install required modules.
@@ -44,7 +56,7 @@ Unverified bots cannot Mass DM servers over 1k+ members. Make sure your bot is v
 
 ## Contact Me
 
-﹒[Discord](https://discord.com/users/709827684888215582)
+﹒[Discord](https://discord.com/users/358310460187082763)
 ﹒[Discord Server](https://discord.gg/4nSYqZ8KAA)
 ﹒[Telegram](https://t.me/clairvoyant7teen)
 ﹒[Steam](https://steamcommunity.com/id/seven777teen/)
